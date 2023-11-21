@@ -16,6 +16,7 @@
 
 package smoketest.aop;
 
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import smoketest.aop.service.HelloWorldService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
+
+/**
+ * 运行时禁用自动配置：{@code -Dspring.boot.enableautoconfiguration=false}
+ *
+ * 如果需要切面，则通过{@link EnableAspectJAutoProxy}启用切面
+ *
+ * @see smoketest.aop.monitor.ServiceMonitor
+ */
 @SpringBootApplication
 public class SampleAopApplication implements CommandLineRunner {
 
